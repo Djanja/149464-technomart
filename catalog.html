@@ -8,8 +8,11 @@
 	<header>
 		<section class="header-user-block">
   	  	<div class="container">
-  	  		<a class="logo" href="#">#</a>
-  	  		<input type="search" name="search" id="search" value="Поиск">
+  	  		<a class="logo" href="#">Техномарт</a>
+  	  		<form action="" method="post" class="search">
+  					<input type="search" name="search" placeholder="поиск" class="input">
+ 						<input type="submit" name="submit" value="" class="submit">
+					</form>  	  		
   	  		<a class="bookmarks" href="#">
   	  			Закладки: 
   	  			<span>0</span>
@@ -23,25 +26,21 @@
   	  </section>
   	  <section class="header-main container">  <!-- Перечисление классов можно применить?  -->
   	  	<div class="header-contacts-registration">
-  	  		<h2>Интернет-магазин строительных материалов и инструментов для ремонта</h2>
+  	  		<p>Интернет-магазин строительных материалов и инструментов для ремонта</p>
   	  		<div class="header-contacts">
   	  		  <p>+7 (812) 555-05-55</p>
   	  		  <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
   	  		</div>
-  	  		<!-- <div class="unauthorized">   Этот блок нужно скрыть свойством display-none? или просто удалить?
+  	  		<div class="unauthorized">   
   	  		  <a  href="#">Войти</a>
   	  		  <a href="#">Регистрация</a>
-  	  		</div> -->
+  	  		</div> 
   	  		<div class="authorized">
-							<p>
-								<a href="profile-page.html">Равшан Джамшутович</a> <!-- А как срывать этот блок на главной? Его там пока вообще нет -->
-								<a href="log-out.html"></a>
-							</p>
-							<p>
-								<a href="#">Мои заказы</a>
-								<a href="#">Личный кабинет</a>
-							</p>
-						</div>
+						<a href="profile-page.html">Равшан Джамшутович</a>
+						<a href="log-out.html"></a>
+						<a href="#">Мои заказы</a>
+						<a href="#">Личный кабинет</a>
+					</div>
   	  	</div>
   	  	<nav class="header-navigation">
   	  	  <ul>
@@ -56,18 +55,20 @@
   	  	</nav>
   	  </section>
  	</header>
- 	<section class="catalog-content container">
- 		<div class="breadcrumbs-navigation">
+ 	<main class="catalog-content container">
+ 		<div class="breadcrumbs-navigation"> <!-- Делаем хлебные крошки -->
  			<a class="home-icon" href="index.html"></a>
- 			<span>
- 				<a href="#">Каталог</a>
- 			</span>
- 			<span>
- 				<a href="#">Инструмент</a>
- 			</span>
- 			<span>
- 				<a href="#">Перфораторы</a>
- 			</span><!-- Делаем хлебные крошки -->
+ 			<ul>
+ 				<li>
+ 					<a href="#">Каталог</a>
+ 				</li>
+ 				<li>
+ 					<a href="#">Инструмент</a>
+ 				</li> 			
+ 				<li>
+ 					<a>Перфораторы</a>
+ 				</li>
+ 			<ul>
  		</div>
  		<h1>Перфораторы</h1>
  		<div class="filter-and-catalog-container"> <!-- Здесь начинается боковой блок с ползунком и фильтрами -->
@@ -81,7 +82,7 @@
  					<fieldset>
  						<legend>Производители:</legend>
  						  <input type="checkbox" name="brand-bosch" id="brand-bosch" checked=""> <!-- а как переносить на следующую строку? не <br> же? -->
- 						  <label for="brand-bosch">Bosch</label>  <!-- Названия в макете прописными буквами, в разметке нельз ими писать? -->
+ 						  <label for="brand-bosch">Bosch</label>  <!-- Названия в макете прописными буквами, в разметке нельз ими писать? text-transform: uppercase-->
  						  <input type="checkbox" name="brand-interskol" id="brand-interskol">
  						  <label for="brand-interskol">Интерскол</label>
  						  <input type="checkbox" name="brand-makita" id="brand-makita">
@@ -106,118 +107,131 @@
  			<div class="sort-by"> <!-- Строка фильтрации, не знаю как сделать, вставил ссылки -->
 				<div class="sort-filters">
 					<span>Сортировка:</span>
-					<a href="#">По цене</a>
-					<a href="#">По типу</a>
-					<a href="#">По функционалу</a>
-				</div>
-				<div class="arrows">
-					<a class="arrow-up" href="#"></a>
-					<a class="arrow-down" href="#"></a>
+					<ul>
+						<li>
+							<a href="#">По цене</a>
+						</li>
+						<li>
+							<a href="#">По типу</a>
+						</li>
+						<li>
+							<a href="#">По функционалу</a>
+						</li>
+						<li>
+							<a class="arrow-up" href="#"></a>
+						</li>
+						<li>
+							<a class="arrow-down" href="#"></a>
+						</li>
+					</ul>
 				</div>
 			</div>
 			<div class="catalog-items"> <!-- карточки товаров -->
-				<div class="catalog-item"> <!-- Этот класс активен :after -->
+				<article class="catalog-item"> <!-- Этот класс активен :after -->
 					<img src="http://placehold.it/218x180" width="218" height="180" alt="">
 					<p>Перфоратор BOSCH BFG 3000</p>
 					<p>22500 р.</p>
 					<a class="btn-red" href="#">15 500 р.</a>
-				</div>
-				<div class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
+				</article>
+				<article class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
 					<a href="#">Купить</a>
 					<a href="#">В закладки</a>
-				</div>
-				<div class="catalog-item"> <!-- Этот класс активен :after -->
+				</article>
+				<article class="catalog-item"> <!-- Этот класс активен :after -->
 					<img src="http://placehold.it/218x180" width="218" height="180" alt="">
 					<p>Перфоратор BOSCH BFG 6000</p>
 					<p>30500 р.</p>
 					<a class="btn-red" href="#">25500 р.</a>
-				</div>
-				<div class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
+				</article>
+				<article class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
 					<a href="#">Купить</a>
 					<a href="#">В закладки</a>
-				</div>
-				<div class="catalog-item"> <!-- Этот класс активен :after  и еще на нем наклейка new? пока не знаю как делать-->
+				</article>
+				<article class="catalog-item"> <!-- Этот класс активен :after  и еще на нем наклейка new? пока не знаю как делать-->
 					<img src="http://placehold.it/218x180" width="218" height="180" alt="">
 					<p>Перфоратор BOSCH BFG 2000</p>
 					<!-- <p>25 500 р.</p> -->
 					<a class="btn-red" href="#">12500 р.</a>
-				</div>
-				<div class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
+				</article>
+				<article class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
 					<a href="#">Купить</a>
 					<a href="#">В закладки</a>
-				</div>
-				<div class="catalog-item"> <!-- Этот класс активен :after -->
+				</article>
+				<article class="catalog-item"> <!-- Этот класс активен :after -->
 					<img src="http://placehold.it/218x180" width="218" height="180" alt="">
 					<p>Перфоратор BOSCH BFG 3000</p>
 					<p>22500 р.</p>
 					<a class="btn-red" href="#">15500 р.</a>
-				</div>
-				<div class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
+				</article>
+				<article class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
 					<a href="#">Купить</a>
 					<a href="#">В закладки</a>
-				</div>
-				<div class="catalog-item"> <!-- Этот класс активен :after + наклейка new!!!-->
+				</article>
+				<article class="catalog-item"> <!-- Этот класс активен :after + наклейка new!!!-->
 					<img src="http://placehold.it/218x180" width="218" height="180" alt="">
 					<p>Перфоратор BOSCH BFG 6000</p>
 					<p>30500 р.</p>
 					<a class="btn-red" href="#">25500 р.</a>
-				</div>
-				<div class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
+				</article>
+				<article class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
 					<a href="#">Купить</a>
 					<a href="#">В закладки</a>
-				</div>
-				<div class="catalog-item"> <!-- Этот класс активен :after -->
+				</article>
+				<article class="catalog-item"> <!-- Этот класс активен :after -->
 					<img src="http://placehold.it/218x180" width="218" height="180" alt="">
 					<p>Перфоратор BOSCH BFG 2000</p>
 					<!-- <p>32 500 р.</p> -->
 					<a class="btn-red" href="#">12500 р.</a>
-				</div>
-				<div class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
+				</article>
+				<article class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
 					<a href="#">Купить</a>
 					<a href="#">В закладки</a>
-				</div>
-				<div class="catalog-item"> <!-- Этот класс активен :after -->
+				</article>
+				<article class="catalog-item"> <!-- Этот класс активен :after -->
 					<img src="http://placehold.it/218x180" width="218" height="180" alt="">
 					<p>Перфоратор BOSCH BFG 3000</p>
 					<p>22500 р.</p>
 					<a class="btn-red" href="#">15500 р.</a>
-				</div>
-				<div class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
+				</article>
+				<article class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
 					<a href="#">Купить</a>
 					<a href="#">В закладки</a>
-				</div>
-				<div class="catalog-item"> <!-- Этот класс активен :after -->
+				</article>
+				<article class="catalog-item"> <!-- Этот класс активен :after -->
 					<img src="http://placehold.it/218x180" width="218" height="180" alt="">
 					<p>Перфоратор BOSCH BFG 6000</p>
 					<p>30500 р.</p>
 					<a class="btn-red" href="#">25500 р.</a>
-				</div>
-				<div class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
+				</article>
+				<article class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
 					<a href="#">Купить</a>
 					<a href="#">В закладки</a>
-				</div>
-				<div class="catalog-item"> <!-- Этот класс активен :after -->
+				</article>
+				<article class="catalog-item"> <!-- Этот класс активен :after -->
 					<img src="http://placehold.it/218x180" width="218" height="180" alt="">
 					<p>Перфоратор BOSCH BFG 2000</p>
 					<!-- <p>32 500 р.</p> -->
 					<a class="btn-red" href="#">12500 р.</a>
-				</div>
-				<div class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
+				</article>
+				<article class="buy-item"> <!-- Этот класс становится активным при наведении :hover -->
 					<a href="#">Купить</a>
 					<a href="#">В закладки</a>
+				</article>
+				<div class="pagination">   <!-- Пагинатор -->
+							<a class="page-btn current-page" href="#">1</a>
+							<a class="page-btn" href="#">2</a>
+							<a class="page-btn" href="#">3</a>
+							<a class="page-btn page-btn-next" href="#">Следующая</a>
 				</div>
 			</div> <!-- Здесь заканчиваются карточки товаров -->
  		</div> <!-- Здесь заканчивается каталог -->
- 		<div class="about-perforators"> <!-- Раздел "О перфораторах" лучше обернуть в тег article? Можно через пробел назначить класс container? -->
-			<div class="container">
-				<h2>Пара слов о перфораторах</h2>
-				<p>Перфоратор — универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне. Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка. В ассортиментном ряду есть выбор «трехрежимников»: в одном устройстве будут совмещены отбойный молоток и ударная дрель.</p>
-			</div>
+ 		<div class="about-perforators container"> <!-- Раздел "О перфораторах" лучше обернуть в тег article? Можно через пробел назначить класс container? -->
+			<h2>Пара слов о перфораторах</h2>
+			<p>Перфоратор — универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне. Существуютэлектромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка. В ассортиментном рядуесть выбор «трехрежимников»: в одном устройстве будут совмещены отбойный молоток и ударная дрель.</p>
 		</div>
- 	</section>
+ 	</main>
  	<footer>
-			<div class="footer-contacts-navigation"> <!-- Можно добалять класс container или ниже вкладывать div? Какие сложности потом с CSS могут возникнуть? -->
-				<div class="container"> 
+			<div class="footer-contacts-navigation container"> <!-- Можно добалять класс container или ниже вкладывать div? Какие сложности потом с CSS могут возникнуть? -->
 					<div class="footer-contacts">
 						<a class="logo" href="#">Техномарт</a>
 						<address>
@@ -226,43 +240,40 @@
 						</address>
 					</div>
 					<div class="footer-navigation">
-						<ul class="footer-nav-1">
+						<ul class="footer-nav-one">
 							<li><a href="#">Компания</a></li>
 							<li><a href="#">Новости</a></li>
 							<li><a href="#">Каталог</a></li>
 							<li><a href="#">Доставка</a></li>
 							<li><a href="#">Контакты</a></li>
 						</ul>
-						<ul class="footer-nav-2">
+						<ul class="footer-nav-two">
 							<li><a href="#">Материалы</a></li>
 							<li><a href="#">Техника</a></li>
 							<li><a href="#">Инструмент</a></li>
 							<li><a href="#">Спецпредложения</a></li>
 						</ul>
 					</div>
-				</div>
 			</div>
-			<div class="footer-socials">
-				<div class="container">
-					<p class="copyright">
-						© 2010-2016 Компания «Техномарт»<br>
-						Все права защищены
-					</p>
+			<div class="footer-socials container">
+					<div class="copyright">
+						<p>© 2010-2016 Компания «Техномарт»
+						Все права защищены</p>
+					</div>
 					<div class="social-btns">
 						<a class="vk-btn" href="#">vk</a>
 						<a class="fb-btn" href="#">fb</a>
 						<a class="ig-btn" href="#">ig</a>
 					</div>
-					<p class="footer-feedback">
-						Обратная связь:<br>
+					<div class="footer-feedback">
+						<p>Обратная связь:</p>
 						<a href="#">mail@htmlacademy.ru</a>
-					</p>
-					<p class="footer-design">
-						Разработано —<br>
+					</div>
+					<div class="footer-design">
+						<p>Разработано —</p>
 						<a href="htmlacademy.ru">HTML Academy</a>
-					</p>
-				</div>
+					</div>
 			</div>
-		</footer>
+	</footer>
 </body>
 </html>
