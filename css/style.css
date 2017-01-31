@@ -1,0 +1,10 @@
+body {
+		display: block;
+	  margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Cuprum, Arial, sans-serif;
+    font-size: 13;
+    color: #000;
+    background-color: #fff;
+}
