@@ -1,10 +1,65 @@
 body {
-		display: block;
-	  margin: 0;
-    padding: 0;
-    text-align: center;
-    font-family: Cuprum, Arial, sans-serif;
-    font-size: 13;
-    color: #000;
-    background-color: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 13px;
+  line-height: 24px;
+  font-family: "PT Sans", "Arial", sans-serif;
+  color: #000;
+  background-color: #fff;
+  min-width: 960px;
+  }
+
+h1, h2 {
+  font-size: 30px;
+  font-family: "Cuprum";
+  color: rgb(50, 66, 92);
+  outline: 1px solid #666;
+
+  }
+
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+	min-width: 940px;
+  min-height: 42px;
+  outline: 1px solid #666;
+  }
+
+.header-user-block {
+  background-color: #293449;
+}
+.header-user-block a {
+  display: inline-block;
+  color: #ffffff;
+  background-color: #293449;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 18px;
+  font-family: "Cuprum"; 
+  vertical-align: top;
+  padding-top: 14px;
+  padding-bottom: 16px;
+}
+.header-user-block .logo {
+  background-color: #ee3643;
+  width: 220px;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+.header-user-block .order {
+  background-color: #63a63e;
+  width: 150px;
+  font-size: 17px;
+  line-height: 18px;
+}
+
+.header-contacts-registration h2 {
+  font-size: 16px;
+  line-height: 23px;
+  font-family: "Cuprum";
+  color: rgb(238, 54, 67);
+  font-style: italic;
+  text-align: left;
 }
